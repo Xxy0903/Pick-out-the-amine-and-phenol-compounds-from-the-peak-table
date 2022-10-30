@@ -15,19 +15,19 @@ for i in range(0,shapeMax-1000):
         for l in range(i,i+1000):
             mz_peak2 = peak_df.iloc[l,2]
             #同位素差值
-            mass_error = (10**6)*abs(mz_peak2-mz_peak1--1.99705)/(mz_peak2)
+            mass_error = (10**6)*abs(mz_peak2-mz_peak1-5.03139)/(mz_peak2)
             #质量误差ppm<10 ppm
             if mass_error < 10:
                 rt_peak1 = peak_df.iloc[i, 1]
                 rt_peak2 = peak_df.iloc[l, 1]
                 rt_error = abs(rt_peak1 - rt_peak2)
-                #时间误差<0.2 min
+                #时间误差<0.1 min
                 if rt_error < 0.1:
                     height_peak1 = peak_df.iloc[i, 3]
                     height_peak2 = peak_df.iloc[l, 3]
                     height_rate = height_peak2 / height_peak1
                     #峰强比例 0.5 < height_rate < 2
-                    if 0.3 < height_rate < 0.4:
+                    if 0.66 < height_rate < 1.33:
                             num = num+1
                             peak_location = 4*num-4
                             ppm_location = peak_location+1
@@ -44,19 +44,19 @@ for i in range(shapeMax-1000,shapeMax):
         for l in range(i,shapeMax):
             mz_peak2 = peak_df.iloc[l,2]
             #同位素差值
-            mass_error = (10**6)*abs(mz_peak2-mz_peak1---1.99705)/(mz_peak2)
+            mass_error = (10**6)*abs(mz_peak2-mz_peak1-5.03139)/(mz_peak2)
             #质量误差ppm<10 ppm
             if mass_error < 10:
                 rt_peak1 = peak_df.iloc[i, 1]
                 rt_peak2 = peak_df.iloc[l, 1]
                 rt_error = abs(rt_peak1 - rt_peak2)
-                #时间误差<0.2 min
+                #时间误差<0.1 min
                 if rt_error < 0.1:
                     height_peak1 = peak_df.iloc[i, 3]
                     height_peak2 = peak_df.iloc[l, 3]
                     height_rate = height_peak2 / height_peak1
                     #峰强比例 0.2 < height_rate < 2
-                    if 0.3 < height_rate < 0.4:
+                    if 0.66 < height_rate < 1.33:
                             num = num+1
                             peak_location = 4*num-4
                             ppm_location = peak_location+1
